@@ -7,70 +7,20 @@ inspecode:
 
   tools:
 
-    clang-format:
-      auto-fix: true
-      thresholds: {num-issues: 732}
-
-    cpd:
-      options: [--skip-lexical-errors]
-      thresholds: {num-issues: 999}
-
-    eslint:
-      auto-fix: true
-      thresholds: {num-issues: 0}
-
-    flow:
-      thresholds: {num-issues: 0}   # found no input files
-
-    # fortify:
-    #   thresholds: {num-issues: 999}
-
-    fossology:
-      thresholds: {num-issues: 4}
-
-    grep:
-      thresholds: {num-issues: 181}
-
-    htmlhint:
-      thresholds: {num-issues: 5}
-
-    jscpd:
-      thresholds: {num-issues: 999}
-
-    jshint:
-      thresholds: {num-issues: 999}   # too many issues detected: 17149 > 1000
-
-    misspell:
-      auto-fix: true
-      thresholds: {num-issues: 6}
-
-    npm-audit:
-      auto-fix: true
-      thresholds: {num-issues: 0}
-
-    npm-test:
-      thresholds: {num-issues: 2}
-
     phpcs:
-      thresholds: {num-issues: 999}   # the console log exceeds the maximum size
-
-    pmd:
-      thresholds: {num-issues: 999}   # Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
-
-    prettier:
-      thresholds: {num-issues: 999}   # [error] Invalid configuration file `.github/ISSUE_TEMPLATE/REPORT_A_BUG.md`: Cannot find module '@stylelint/prettier-config'
-
-    stylelint:
-      auto-fix: true
-      thresholds: {num-issues: 999}   # Error: Cannot find module 'lodash'
-
-    tidy:
-      auto-fix: true
-      thresholds: {num-issues: 19}
-
-    # understand:
-    #   thresholds: {num-issues: 999}
-
-    unused:
-      options: [--single-occurrence, --all-likelihoods]
-      thresholds: {num-issues: 8}
+    - options:
+        --standard: PEAR
+        --exclude:
+          # - Generic.Commenting.DocComment
+          - Generic.WhiteSpace.DisallowTabIndent
+          - PEAR.Functions.FunctionCallSignature
+          - PEAR.WhiteSpace.ScopeIndent
+      thresholds: {num-issues: 999}
+    - options:
+        --standard: PEAR
+        --exclude:
+          - Generic.Commenting.DocComment
+          - Generic.WhiteSpace.DisallowTabIndent
+          - PEAR.Functions.FunctionCallSignature
+          - PEAR.WhiteSpace.ScopeIndent
+      thresholds: {num-issues: 999}
