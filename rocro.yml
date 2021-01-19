@@ -9,18 +9,26 @@ inspecode:
 
     phpcs:
     - options:
-        --standard: PEAR
-        --exclude:
-          # - Generic.Commenting.DocComment
-          - Generic.WhiteSpace.DisallowTabIndent
-          - PEAR.Functions.FunctionCallSignature
-          - PEAR.WhiteSpace.ScopeIndent
+        --severity: 0
       thresholds: {num-issues: 999}
     - options:
-        --standard: PEAR
-        --exclude:
-          - Generic.Commenting.DocComment
-          - Generic.WhiteSpace.DisallowTabIndent
-          - PEAR.Functions.FunctionCallSignature
-          - PEAR.WhiteSpace.ScopeIndent
+        --severity: 1
+      thresholds: {num-issues: 999}
+    - options:
+        --severity: 2
+      thresholds: {num-issues: 999}
+    - options:
+        --severity: 3
+      thresholds: {num-issues: 999}
+    - options:
+        --severity: 4
+      thresholds: {num-issues: 999}
+    - options:
+        --severity: 5
+      thresholds: {num-issues: 999}
+    - options:
+        --severity: 6
+      thresholds: {num-issues: 999}
+    - options:
+        --severity: 7
       thresholds: {num-issues: 999}
