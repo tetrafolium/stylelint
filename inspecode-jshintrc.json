@@ -1,6 +1,10 @@
 {
-	"esversion": 9,
+	"esversion": 10,
 	"moz": true,
+	"jasmine": true,
 	"mocha": true,
-	"node": true
+	"node": true,
+	"globals": {
+		"testRule": true
+	}
 }
