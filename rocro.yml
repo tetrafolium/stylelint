@@ -8,19 +8,14 @@ inspecode:
   tools:
 
     phpcs:
-    - options:
-        --standard: PEAR
-        --exclude:
-          # - Generic.Commenting.DocComment
-          - Generic.WhiteSpace.DisallowTabIndent
-          - PEAR.Functions.FunctionCallSignature
-          - PEAR.WhiteSpace.ScopeIndent
-      thresholds: {num-issues: 999}
-    - options:
+      - ignore:
+          - '**/__tests__'
+          - '**/system-tests/'
+        options:
         --standard: PEAR
         --exclude:
           - Generic.Commenting.DocComment
           - Generic.WhiteSpace.DisallowTabIndent
           - PEAR.Functions.FunctionCallSignature
           - PEAR.WhiteSpace.ScopeIndent
-      thresholds: {num-issues: 999}
+        thresholds: {num-issues: 999}
