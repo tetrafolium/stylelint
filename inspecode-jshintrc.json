@@ -1,0 +1,12 @@
+{
+	"esversion": 10,
+	"expr": true,
+	"moz": true,
+	"jasmine": true,
+	"mocha": true,
+	"node": true,
+	"globals": {
+		"jest": true,
+		"testRule": true
+	}
+}
