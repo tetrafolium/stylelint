@@ -11,7 +11,7 @@ inspecode:
 
     cpd:
       options: [--skip-lexical-errors]
-      thresholds: { num-issues: 999 }
+      thresholds: { num-issues: 167 }
 
     eslint:
       auto-fix: true
@@ -33,7 +33,7 @@ inspecode:
       thresholds: { num-issues: 5 }
 
     jscpd:
-      thresholds: { num-issues: 999 }
+      thresholds: { num-issues: 615 }
 
     jshint:
       config-file: 'inspecode-jshintrc.json'
@@ -62,9 +62,9 @@ inspecode:
         thresholds: { num-issues: 672 }
 
     pmd:
-      - achine: { cpu: 1.0 }
+      - machine: { cpu: 1.0 }
         thresholds: { num-issues: 999 } # Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
-      - achine: { cpu: 1.1 }
+      - machine: { cpu: 1.1 }
         thresholds: { num-issues: 999 }
 
     prettier:
