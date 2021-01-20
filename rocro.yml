@@ -62,7 +62,10 @@ inspecode:
         thresholds: { num-issues: 672 }
 
     pmd:
-      thresholds: { num-issues: 999 } # Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+      - achine: { cpu: 1.0 }
+        thresholds: { num-issues: 999 } # Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+      - achine: { cpu: 1.1 }
+        thresholds: { num-issues: 999 }
 
     prettier:
       thresholds: { num-issues: 999 } # [error] Invalid configuration file `.github/ISSUE_TEMPLATE/REPORT_A_BUG.md`: Cannot find module '@stylelint/prettier-config'
