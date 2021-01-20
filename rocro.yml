@@ -51,7 +51,15 @@ inspecode:
       thresholds: { num-issues: 2 }
 
     phpcs:
-      thresholds: { num-issues: 999 } # the console log exceeds the maximum size
+      - options:
+          --sniffs: ['Generic.ControlStructures.InlineControlStructure']
+        thresholds: { num-issues: 133 }
+      - options:
+          --sniffs: ['PEAR.ControlStructures.MultiLineCondition']
+        thresholds: { num-issues: 680 }
+      - options:
+          --sniffs: ['PEAR.Functions.FunctionDeclaration']
+        thresholds: { num-issues: 672 }
 
     pmd:
       thresholds: { num-issues: 999 } # Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
