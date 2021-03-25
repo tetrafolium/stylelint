@@ -35,12 +35,12 @@ inspecode:
     htmlhint:
       - thresholds: { num-issues: 5 }
       - ignore: '**/__tests__/'
-        thresholds: { num-issues: 999 }
+        thresholds: { num-issues: 0 } # excluded all analyzable files by input/ignore patterns
 
     jscpd:
       - thresholds: { num-issues: 615 }
       - ignore: '**/__tests__/'
-        thresholds: { num-issues: 999 }
+        thresholds: { num-issues: 360 }
 
     jshint:
       config-file: 'inspecode-jshintrc.json'
@@ -82,10 +82,10 @@ inspecode:
       thresholds: { num-issues: 999 } # Error: Cannot find module 'lodash'
 
     tidy:
-      - thresholds: { num-issues: 19 }
+      - auto-fix: true
+        thresholds: { num-issues: 19 }
       - ignore: '**/__tests__/'
-        auto-fix: true
-        thresholds: { num-issues: 999 }
+        thresholds: { num-issues: 0 } # excluded all analyzable files by input/ignore patterns
 
     # understand:
     #   thresholds: {num-issues: 999}
