@@ -52,7 +52,7 @@ inspecode:
 
     npm-audit:
       auto-fix: true
-      thresholds: { num-issues: 0 }
+      thresholds: { num-issues: 1 }
 
     npm-test:
       thresholds: { num-issues: 2 }
@@ -78,8 +78,11 @@ inspecode:
       thresholds: { num-issues: 0 } # [error] Invalid configuration file `.github/ISSUE_TEMPLATE/REPORT_A_BUG.md`: Cannot find module '@stylelint/prettier-config'
 
     stylelint:
-      auto-fix: true
-      thresholds: { num-issues: 999 } # Error: Cannot find module 'lodash'
+      - auto-fix: false # auto-fix task ... stylelint timed out.
+        thresholds: { num-issues: 999 } # Error: Cannot find module 'lodash' (codelift-plugins#1796)
+      - ignore: '**/__tests__/'
+        # auto-fix: true                # auto-fix task ... stylelint timed out.
+        thresholds: { num-issues: 999 } # too many issues detected: 1102 > 1000
 
     tidy:
       - auto-fix: true
