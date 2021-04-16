@@ -1,49 +1,50 @@
 declare module 'autoprefixer/lib/browsers' {
-	import browserslist from 'browserslist';
+import browserslist from 'browserslist';
 
-	type Queries = string | ReadonlyArray<string>;
+  type Queries = string|ReadonlyArray<string>;
 
-	interface Browsers {
-		parse(queries: Queries): string[];
-		prefix(browser: string): string;
-		isSelected(browser: string): boolean;
-	}
+  interface Browsers {
+    parse(queries: Queries): string[];
+    prefix(browser: string): string;
+    isSelected(browser: string): boolean;
+  }
 
-	class BrowsersImpl implements Browsers {
-		constructor(data: { [k: string]: any }, options?: any, browserslistOpts?: browserslist.Options);
+  class BrowsersImpl implements Browsers {
+    constructor(data: {[k: string]: any}, options?: any,
+                browserslistOpts?: browserslist.Options);
 
-		isSelected(browser: string): boolean;
+    isSelected(browser: string): boolean;
 
-		parse(queries: string | ReadonlyArray<string>): string[];
+    parse(queries: string|ReadonlyArray<string>): string[];
 
-		prefix(browser: string): string;
+    prefix(browser: string): string;
 
-		prefixes(): string[];
+    prefixes(): string[];
 
-		withPrefix(value: string): boolean;
-	}
+    withPrefix(value: string): boolean;
+  }
 
-	export = BrowsersImpl;
+  export = BrowsersImpl;
 }
 
 declare module 'autoprefixer/lib/prefixes' {
-	import Browsers from 'autoprefixer/lib/browsers';
+import Browsers from 'autoprefixer/lib/browsers';
 
-	interface Prefixes {
-		remove: { [k: string]: any };
+  interface Prefixes {
+    remove: {[k: string]: any};
 
-		unprefixed(value: string): string;
-	}
+    unprefixed(value: string): string;
+  }
 
-	class PrefixesImpl implements Prefixes {
-		constructor(data: string[], browsers: Browsers, options?: any);
+  class PrefixesImpl implements Prefixes {
+    constructor(data: string[], browsers: Browsers, options?: any);
 
-		remove: { [p: string]: any };
+    remove: {[p: string]: any};
 
-		unprefixed(value: string): string;
-	}
+    unprefixed(value: string): string;
+  }
 
-	export = PrefixesImpl;
+  export = PrefixesImpl;
 }
 
 /** fork from @types/autoprefixer */
@@ -56,27 +57,28 @@ declare module 'autoprefixer/lib/prefixes' {
 // TypeScript Version: 2.7
 
 declare module 'autoprefixer' {
-	import { Plugin } from 'postcss';
-	import { Stats } from 'browserslist';
-	type BrowserslistTarget = string | string[] | { [key: string]: string[] };
+import {Plugin} from 'postcss';
+import {Stats} from 'browserslist';
+  type BrowserslistTarget = string|string[]|{[key: string] : string[]};
 
-	interface Options {
-		env?: string;
-		cascade?: boolean;
-		add?: boolean;
-		remove?: boolean;
-		supports?: boolean;
-		flexbox?: boolean | 'no-2009';
-		grid?: false | 'autoplace' | 'no-autoplace';
-		stats?: Stats;
-		browsers?: string[] | string;
-		overrideBrowserslist?: BrowserslistTarget;
-		ignoreUnknownVersions?: boolean;
-	}
+  interface Options {
+    env?: string;
+    cascade?: boolean;
+    add?: boolean;
+    remove?: boolean;
+    supports?: boolean;
+    flexbox?: boolean|'no-2009';
+    grid?: false|'autoplace'|'no-autoplace';
+    stats?: Stats;
+    browsers?: string[]|string;
+    overrideBrowserslist?: BrowserslistTarget;
+    ignoreUnknownVersions?: boolean;
+  }
 
-	type Autoprefixer = Plugin<Options> & { data: { prefixes: any; browsers: string[] } };
+  type Autoprefixer =
+      Plugin<Options>&{data : {prefixes : any; browsers : string[]}};
 
-	const autoprefixer: Autoprefixer;
+  const autoprefixer: Autoprefixer;
 
-	export = autoprefixer;
+  export = autoprefixer;
 }
